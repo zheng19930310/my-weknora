@@ -1,0 +1,12 @@
+# 本机网络仅 docker.m.daocloud.io 可达，镜像统一走该加速前缀（不改 daemon 设置）
+services:
+  frontend:
+    image: docker.m.daocloud.io/wechatopenai/weknora-ui:${WEKNORA_VERSION:-latest}
+  app:
+    image: docker.m.daocloud.io/wechatopenai/weknora-app:${WEKNORA_VERSION:-latest}
+  docreader:
+    image: docker.m.daocloud.io/wechatopenai/weknora-docreader:${WEKNORA_VERSION:-latest}
+  postgres:
+    image: docker.m.daocloud.io/paradedb/paradedb:v0.25.11-pg17
+  redis:
+    image: docker.m.daocloud.io/redis:7.0-alpine
